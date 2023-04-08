@@ -61,6 +61,17 @@ Inefficiency being tested:
   - Iterations/delay also be passed as command-line arguments
 - Install dependencies via `npm i`
 
+#### [If-Required] Limit node bandwidth
+- Install wondershaper bandwidth limiter: `sudo apt install wondershaper`
+- Specify Upload Download limit
+  - Old version: `wondershaper [ interface ] [ downlink ] [ uplink ]`
+  - Newer version: `wondershaper -a [interface] -d [downlink] -u [uplink]`
+- Find Network Interface
+  - check `ifconfig`
+  - [If required] `sudo apt install net-tools`
+- Finally set bandwidth limit example: `sudo wondershaper eno1 256 256` setting both upload/download speed as 256 Kpbs
+- Clear all limits: `sudo wondershaper clear eno1`
+For more details check [https://averagelinuxuser.com/limit-bandwidth-linux/]
 #### Run script
 
 - `node ./index.js`: Will repeatedly post telemetry to the Thermostat T1 device, causing the rule chain to look up information about the related device (Test Device A1).
