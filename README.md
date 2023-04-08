@@ -9,12 +9,18 @@ In short:
 
 - Clone (Thingsboard)[https://github.com/thingsboard/thingsboard]
 - Install Java 11
-- Install PostgreSQL
+- Install PostgreSQL [https://www.postgresql.org/download/linux/ubuntu/]
+  - Allow all host (including remote) connection to DB [https://www.bigbinary.com/blog/configure-postgresql-to-allow-remote-connection]
+  - Check status of db `service postgresql status`
+  - Login to postgre LocalDB: `sudo -u postgres psql`
+  - Login to RemoteDB (if-required): `psql -U postgres -d postgres -h 128.110.217.201 -W`
+  - Create user for TB app `ALTER USER postgres with encrypted password 'postgres';`
+  - Find config file location (if-required): `sudo -u postgres psql -c 'SHOW config_file'`
 - Initialize dev DB
   - Note: When on Windows, use `application/target/windows/install_dev_db.bat`.
 - Build jar: `mvn clean install -DskipTests`
 - Start TB: `java -jar application/target/thingsboard-${VERSION}-boot.jar`
-- Sign in: http://localhost:8080 / Username: tenant@thingsboard.org / PW: tenant
+- Sign in [if-required: replace localhost with your hostname]: http://localhost:8080 / Username: tenant@thingsboard.org / PW: tenant
 
 #### Configure TB for device attribute inefficiency
 
@@ -23,8 +29,8 @@ Inefficiency being tested:
 
 1. Add relation to device
 
-- http://localhost:8080/devices
-- Select device Thermostat T1
+- Open [if-required: replace localhost with your hostname]: http://localhost:8080/devices
+- Select device "Thermostat T1" from left "Devices" menu
 - Open relations tab and click "plus"
 - Select entity type = "Device" and entity = "Test Device A1"
 - Click "Add"
@@ -33,7 +39,7 @@ Inefficiency being tested:
 
 2. Add attributes node to thermostat rule chain
 
-- http://localhost:8080/ruleChains
+- Go to Rule Chains [if-required: replace localhost with your hostname]: http://localhost:8080/ruleChains
 - Select Thermostat rule chain
 - Select "Open rule chain"
 - Drag a "related device attributes" node into the graph
@@ -47,7 +53,10 @@ Inefficiency being tested:
 - Click orange check in bottom right to save chain
 
 #### Configure script
-
+- Install nodejs in Ubuntu 18.04
+  - Add repo : `curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -`
+  - Install: `sudo apt install nodejs`
+  - Check version `node --version` and `npm --version`
 - Change TB host and port, iteration count, and delay if needed in `.env`
   - Iterations/delay also be passed as command-line arguments
 - Install dependencies via `npm i`
