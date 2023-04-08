@@ -29,7 +29,7 @@ Inefficiency being tested:
 
 1. Add relation to device
 
-- Open [if-required: replace localhost with your hostname]: http://localhost:8080/devices
+- Open: http://localhost:8080/devices [if-required: replace localhost with your hostname]
 - Select device "Thermostat T1" from left "Devices" menu
 - Open relations tab and click "plus"
 - Select entity type = "Device" and entity = "Test Device A1"
@@ -39,7 +39,7 @@ Inefficiency being tested:
 
 2. Add attributes node to thermostat rule chain
 
-- Go to Rule Chains [if-required: replace localhost with your hostname]: http://localhost:8080/ruleChains
+- Go to Rule Chains: http://localhost:8080/ruleChains [if-required: replace localhost with your hostname]
 - Select Thermostat rule chain
 - Select "Open rule chain"
 - Drag a "related device attributes" node into the graph
