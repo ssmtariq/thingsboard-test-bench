@@ -19,6 +19,7 @@ In short:
 - Initialize dev DB
   - Note: When on Windows, use `application/target/windows/install_dev_db.bat`.
 - Build jar: `mvn clean install -DskipTests`
+  -  Build skip licensing (if-required): `mvn clean install -DskipTests -Dlicense.skip`
 - Start TB: `java -jar application/target/thingsboard-${VERSION}-boot.jar`
 - Sign in [if-required: replace localhost with your hostname]: http://localhost:8080 / Username: tenant@thingsboard.org / PW: tenant
 
