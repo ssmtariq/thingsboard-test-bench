@@ -73,6 +73,13 @@ Inefficiency being tested:
 - Finally set bandwidth limit example: `sudo wondershaper eno1 256 256` setting both upload/download speed as 256 Kpbs
 - Clear all limits: `sudo wondershaper clear eno1`
 For more details check [https://averagelinuxuser.com/limit-bandwidth-linux/]
+
+#### Install nodejs in Ubuntu 18.04
+- Add suitable node.js version for your OS: `curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -`
+- Install nodejs: `sudo apt install nodejs`
+- Check installed nodejs version: `node --version`
+- Check node package manager version: `npm --version`
+
 #### Run script
 
 - `node ./index.js`: Will repeatedly post telemetry to the Thermostat T1 device, causing the rule chain to look up information about the related device (Test Device A1).
