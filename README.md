@@ -11,6 +11,8 @@ In short:
 - Install Java 11
 - Install PostgreSQL [https://www.postgresql.org/download/linux/ubuntu/]
   - Allow all host (including remote) connection to DB [https://www.bigbinary.com/blog/configure-postgresql-to-allow-remote-connection]
+  - Find Config File Location PostgreSQL db `psql --version` `ls /etc/postgresql/<version>/main/`
+  - Restart PostgreSQL db `sudo systemctl restart postgresql`
   - Check status of db `service postgresql status`
   - Login to postgre LocalDB: `sudo -u postgres psql`
   - Login to RemoteDB (if-required): `psql -U postgres -d postgres -h 128.110.217.201 -W`
