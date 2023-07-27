@@ -25,8 +25,9 @@ In short:
   - Check status of db `service postgresql status`
   - Check the host:port config status `netstat -nlt`
   - Login to postgre LocalDB: `sudo -u postgres psql`
-  - Login to RemoteDB (if-required): `psql -U postgres -d postgres -h 128.110.217.201 -W`
   - Create user for TB app `ALTER USER postgres with encrypted password 'postgres';`
+  - Login to RemoteDB (if-required): `psql -U postgres -d postgres -h <REMOTE_DB_IP> -W`
+  - Update the file `thingsboard-test/application/src/main/resources/thingsboard.yml` with replacing `localhost` by `REMOTE_DB_IP`
   - Find config file location (if-required): `sudo -u postgres psql -c 'SHOW config_file'`
 - Initialize dev DB
   - Note: When on Windows, use `application/target/windows/install_dev_db.bat`.
