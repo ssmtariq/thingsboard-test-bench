@@ -9,6 +9,7 @@ In short:
 
 - Clone (Thingsboard)[https://github.com/thingsboard/thingsboard]
 - Install Java 11
+- Install Maven 3.1.0+
 - Install PostgreSQL [https://www.postgresql.org/download/linux/ubuntu/]
   - Allow all host (including remote) connection to DB [https://www.bigbinary.com/blog/configure-postgresql-to-allow-remote-connection]
   - Find the Location PostgreSQL config files `psql --version` `ls /etc/postgresql/<version>/main/`
