@@ -11,9 +11,19 @@ In short:
 - Install Java 11
 - Install PostgreSQL [https://www.postgresql.org/download/linux/ubuntu/]
   - Allow all host (including remote) connection to DB [https://www.bigbinary.com/blog/configure-postgresql-to-allow-remote-connection]
-  - Find Config File Location PostgreSQL db `psql --version` `ls /etc/postgresql/<version>/main/`
+  - Find the Location PostgreSQL config files `psql --version` `ls /etc/postgresql/<version>/main/`
+  - Edit the **postgresql.conf** to add/enable this config `listen_addresses = '*'` use the command
+    `sudo vi /etc/postgresql/<version>/main/postgresql.conf`
+  - Add the lines below at the end of **pg_hba.conf** use the command `sudo vi /etc/postgresql/<version>/main/pg_hba.conf`
+    ```
+
+    host    all             all              0.0.0.0/0                       md5
+    host    all             all              ::/0                            md5
+    
+    ```
   - Restart PostgreSQL db `sudo systemctl restart postgresql`
   - Check status of db `service postgresql status`
+  - Check the host:port config status `netstat -nlt`
   - Login to postgre LocalDB: `sudo -u postgres psql`
   - Login to RemoteDB (if-required): `psql -U postgres -d postgres -h 128.110.217.201 -W`
   - Create user for TB app `ALTER USER postgres with encrypted password 'postgres';`
