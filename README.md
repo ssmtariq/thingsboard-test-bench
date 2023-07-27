@@ -90,3 +90,8 @@ For more details check [https://averagelinuxuser.com/limit-bandwidth-linux/]
 
 #### Run script
 - `node ./index.js`: Will repeatedly post telemetry to the Thermostat T1 device, causing the rule chain to look up information about the related device (Test Device A1).
+
+#### Collect test results [optional]
+- To replace a whole line start with text use the following regex in intellijIdea/VSCode `^text.*`
+- Find newline with white space `^\s*$`
+- Remove all Empty lines from a text file `grep -v -x '[[:blank:]]*' fileWithRawData > resultFile`
