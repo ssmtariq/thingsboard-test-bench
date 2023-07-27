@@ -86,6 +86,7 @@ Inefficiency being tested:
   - [If required] `sudo apt install net-tools`
 - Finally set bandwidth limit example: `sudo wondershaper eno1 256 256` setting both upload/download speed as 256 Kpbs
 - Clear all limits: `sudo wondershaper clear eno1`
+- Check wondershare manual `man wondershare`
 For more details check [https://averagelinuxuser.com/limit-bandwidth-linux/]
 
 #### Run script
